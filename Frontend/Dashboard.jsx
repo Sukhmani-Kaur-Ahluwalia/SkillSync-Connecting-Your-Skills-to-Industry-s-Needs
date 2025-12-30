@@ -40,7 +40,6 @@ function Dashboard({ name, email, interest, skills, studentId, onEdit }) {
             <p style={{ color: 'black' }}><strong>Total Skills:</strong> {skills.length}</p>
           </div>
 
-          {/* Job Match Score Card - Fixed to use live backend data */}
           <div style={{ background: 'white', padding: '20px', borderRadius: '12px', border: '1px solid #3f96aeff' }}>
             <h3 style={{ color: '#3f96aeff' }}>Top Match Score</h3>
             <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000' }}>
@@ -53,7 +52,6 @@ function Dashboard({ name, email, interest, skills, studentId, onEdit }) {
         <h3 style={{ marginTop: '30px', borderBottom: '2px solid #d6989cff', color:'#75909c'}}>Recommended for you</h3>
         
         <ul style={{ listStyle: 'none', padding: 0 }}>
-          {/* FIXED: Added 'return' and updated data paths to match backend response */}
           {matches.map((item, index) => {
             return (
               <li key={index} style={{ background: '#6b9dc6ff', margin: '15px 0', padding: '15px', borderRadius: '8px', borderLeft: '5px solid #2160b3ff', color: 'white' }}>
@@ -72,7 +70,7 @@ function Dashboard({ name, email, interest, skills, studentId, onEdit }) {
                    )}
                 </div>
 
-                {/* Learning Resources Section */}
+        
                 <div style={{ display: 'flex', gap: '8px', marginTop: '12px', flexWrap: 'wrap' }}>
                   {item.learningResources.map((res, i) => (
                     <a key={i} href={res.link} target="_blank" rel="noreferrer" 
@@ -93,5 +91,6 @@ function Dashboard({ name, email, interest, skills, studentId, onEdit }) {
     </div>
   );
 }
+
 
 export default Dashboard;
