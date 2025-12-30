@@ -1,7 +1,7 @@
 Working of SkillSync:
 
 
-1.	Student’s Side
+1.	Student’s Side:
    
 a. Student creates his account.
 
@@ -12,11 +12,12 @@ c. The software displays all jobs, with match in % alongside each job.
 d. Displays the missing skills under each job and resources to learn them.
 
 
-2.	Industry Leader’s/Recruiter’s Side
-Employer creates his account.
+2.	Industry Leader’s/Recruiter’s Side:
 
-Enters the job title, required skills and job location.
+a. Employer creates his account.
 
-Enters the resources for required skills, if he wants.
+b. Enters the job title, required skills and job location.
 
-All these things get stored in the database.
+c. Enters the resources for required skills, if he wants.
+
+d. All these things get stored in the database.
