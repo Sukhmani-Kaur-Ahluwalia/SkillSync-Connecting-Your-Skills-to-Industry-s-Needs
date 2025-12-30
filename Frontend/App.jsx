@@ -76,11 +76,9 @@ function App() {
 
   return (
     <div style={{ backgroundColor: '#D1B4C6', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'sans-serif', padding: '40px 20px' }}>
-      {/* Width ko 90% aur maxWidth ko 1000px kiya taaki wide dikhe */}
       <div style={{ backgroundColor: '#EFE1E1', padding: '50px', borderRadius: '15px', boxShadow: '0 10px 25px rgba(60, 85, 136, 0.2)', width: '90%', maxWidth: '1000px' }}>
         <h1 style={{ color: '#d6989cff', marginBottom: '20px', textAlign: 'center', fontSize: '2.5rem' }}>SkillSync</h1>
         
-        {/* Form elements ko wide screen par balance karne ke liye grid daal sakte hain par maine waisa hi rakha hai jaisa aapne manga */}
         <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px', color:'#141515ff' }}>Full Name</label>
         <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)} style={{ width: '100%', padding: '15px', marginBottom: '20px', color:'black', background:'white', borderRadius: '8px', border: '1px solid #d5d2d2ff', boxSizing: 'border-box' }} />
 
