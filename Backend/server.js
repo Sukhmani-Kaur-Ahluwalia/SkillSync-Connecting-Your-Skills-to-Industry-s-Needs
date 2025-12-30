@@ -11,36 +11,32 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// DB Connection
+// Connection to the MongoDB Database : SkillSync Cluster
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
-// Health check
+// Checking whether backend is running perfectly or not.
 app.get('/', (req, res) => {
   res.send("Backend is running");
 });
 
-// BRIDGE 1: Get all jobs
+// BRIDGE 1: Get all jobs from the database (SkillSync Cluster)
 app.get('/api/jobs', async (req, res) => {
   const jobs = await Job.find();
   res.json(jobs);
 });
-
-// Add this to see all Students
 app.get('/api/students', async (req, res) => {
   const students = await Student.find();
   res.json(students);
 });
-
-// Add this to see all Resources
 app.get('/api/resources', async (req, res) => {
   const resources = await Resource.find();
   res.json(resources);
 });
 
 
-// BRIDGE 2: Save student
+// BRIDGE 2: Save student to the database
 app.post('/api/students', async (req, res) => {
   try {
     const student = new Student(req.body);
@@ -52,7 +48,7 @@ app.post('/api/students', async (req, res) => {
 });
 
 
-// BRIDGE 3: Matching logic + resources
+// BRIDGE 3: Job Matching % calcultion and resources
 app.get('/api/match/:studentId', async (req, res) => {
   const student = await Student.findById(req.params.studentId);
   const jobs = await Job.find();
